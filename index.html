@@ -1,59 +1,142 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title> sum of two numbers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculater</title>
+</head>
+<body>
     <style>
-        .container {
-            height: 300px;
+
+        
+        h1{
+            text-align: center;
+        }
+        .continer{
             display: flex;
             flex-direction: column;
-            background-color: palevioletred;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+
+
+        }
+        .fist-continer{
+            height: 54vh;
+            width: 30vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            background-color: blueviolet;
+            border-radius: 20px;
+        }
+        .input-text{
+            padding: 1vh;
+            margin: 2vh 0;
             border-radius: 8px;
-            margin: 100px auto;
-            max-width: 600px;
+           
         }
+        p{
+            font-size: 2vw;
+            font-weight: 700;
 
-        .name {
-            font-size: 40px;
+        }
+        .btn{
+            height: 6vh;
+            width: 12vw;
+            border-radius: 10px;
+            font-weight: 600;
+            margin: 10px;
+        }
+        .btn:hover{
+            background-color: brown;
             color: white;
         }
 
-        .input-box {
-            width: 300px;
-            height: 30px;
-            margin: 20px 0px;
-            border-radius: 7px;
-            padding: 5px;
-            border: 1px solid #ccc;
+        @media screen and (max-width:480px) {
+
+            .continer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+
+        }
+        .fist-continer{
+            height: 54vh;
+            width: 60vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid red;
+            background-color: burlywood;
+            border-radius: 20px;
+        }
+        .input-text{
+            padding: 1vh;
+            margin: 2vh 0;
+            border-radius: 8px;
+           
+        }
+        p{
+            font-size: 6vw;
+            font-weight: 700;
+
+        }
+        .btn{
+            height: 5vh;
+            width: 42vw;
+            border-radius: 10px;
+            font-weight: 600;
+            margin: 10px;
         }
 
-        .result {
-            font-size: 20px;
-            color: white;
-        }
+
+        
+    }
+      
     </style>
-</head>
+    <h1>TWO NUMBER ADDTION </h1>
+    <div class="continer">
+    <div class="fist-continer">
+        <input type="text" class="input-text" id="input-value1" placeholder="Enter your 1st number" >
+        <input type="text"class="input-text" id="input-value2"  placeholder="Enter your 2nd number :"  >
+        <p id="result"></p>
+        <button onclick="calculater()" class="btn">ANS</button>
+        <button type="button" id="receat" onclick="reset()" class="btn">CLEAR</button>
+       
 
-<body>
-    <div class="container">
-        <p class="name">Sum of Two Numbers</p>
-        <input type="number" class="input-box" id="input1" oninput="calculate()">
-        <input type="number" class="input-box" id="input2" oninput="calculate()">
-        <p class="result" id="result"></p>
     </div>
+   
 
+
+    </div>
     <script>
-        function calculate() {
-            const num1 = document.getElementById("input1").value;
-            const num2 = document.getElementById("input2").value;
-            const sum = parseInt(num1 || 0) + parseInt(num2 || 0);
-            const resultElement = document.getElementById("result");
-            resultElement.innerText = `Sum of ${num1} and ${num2} is ${sum}`;
-        }
-    </script>
-</body>
+        
+      
 
-</html>
+         function calculater(){
+              const num1Element = document.getElementById("input-value1");
+             const num2Element = document.getElementById("input-value2");
+           
+            const total= (parseInt(num1Element.value)|| 0) +( parseInt(num2Element.value)||0) 
+            
+            const resultEelment =  document.getElementById("result")
+            resultEelment.innerText =`sum: ${total}`
+
+         }
+         function reset()
+         {
+            document.getElementById("input-value1").value = "";
+            document.getElementById("input-value2").value = "";
+            document.getElementById("result").innerText = "sum = 0";
+        
+         }
+
+
+    </script>
+    
