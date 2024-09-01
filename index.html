@@ -1,142 +1,97 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>calculater</title>
-</head>
-<body>
-    <style>
-
-        
-        h1{
-            text-align: center;
-        }
-        .continer{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-
-        }
-        .fist-continer{
-            height: 54vh;
-            width: 30vw;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border: 2px solid black;
-            background-color: blueviolet;
-            border-radius: 20px;
-        }
-        .input-text{
-            padding: 1vh;
-            margin: 2vh 0;
-            border-radius: 8px;
-           
-        }
-        p{
-            font-size: 2vw;
-            font-weight: 700;
-
-        }
-        .btn{
-            height: 6vh;
-            width: 12vw;
-            border-radius: 10px;
-            font-weight: 600;
-            margin: 10px;
-        }
-        .btn:hover{
-            background-color: brown;
-            color: white;
-        }
-
-        @media screen and (max-width:480px) {
-
-            .continer{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-
-        }
-        .fist-continer{
-            height: 54vh;
-            width: 60vw;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            border: 2px solid red;
-            background-color: burlywood;
-            border-radius: 20px;
-        }
-        .input-text{
-            padding: 1vh;
-            margin: 2vh 0;
-            border-radius: 8px;
-           
-        }
-        p{
-            font-size: 6vw;
-            font-weight: 700;
-
-        }
-        .btn{
-            height: 5vh;
-            width: 42vw;
-            border-radius: 10px;
-            font-weight: 600;
-            margin: 10px;
-        }
-
+   
+   <style>
+    
+    .app-container{
+        display: block;
+        align-items: center;
+        border: 2px solid black;
+        border-radius: 25px;
+        margin:  0px auto;
+        background-color: burlywood;
+        height: 500px;
+        box-shadow: 0px 0px 10px 0px #B3E5FC;
+        width:700px;
 
         
     }
-      
-    </style>
-    <h1>TWO NUMBER ADDTION </h1>
-    <div class="continer">
-    <div class="fist-continer">
-        <input type="text" class="input-text" id="input-value1" placeholder="Enter your 1st number" >
-        <input type="text"class="input-text" id="input-value2"  placeholder="Enter your 2nd number :"  >
-        <p id="result"></p>
-        <button onclick="calculater()" class="btn">ANS</button>
-        <button type="button" id="receat" onclick="reset()" class="btn">CLEAR</button>
-       
-
-    </div>
-   
-
-
-    </div>
-    <script>
-        
-      
-
-         function calculater(){
-              const num1Element = document.getElementById("input-value1");
-             const num2Element = document.getElementById("input-value2");
-           
-            const total= (parseInt(num1Element.value)|| 0) +( parseInt(num2Element.value)||0) 
-            
-            const resultEelment =  document.getElementById("result")
-            resultEelment.innerText =`sum: ${total}`
-
-         }
-         function reset()
-         {
-            document.getElementById("input-value1").value = "";
-            document.getElementById("input-value2").value = "";
-            document.getElementById("result").innerText = "sum = 0";
-        
-         }
-
-
-    </script>
     
+
+
+    .app-heading{
+     text-align :center;
+     font-size: 35px;
+    
+    
+    }
+
+    .text-container{
+        display:flex;
+        justify-content: space-around;
+        
+        
+    }
+
+    .input-text{
+        width:200px;
+        height: 80px;
+        border-radius: 40px;
+        border: 2px double black;
+       
+        font-size: 40px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        padding-left: 15px;
+        
+    }
+
+    .match-result{
+        text-align: center;
+        font-size: 40px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        
+    }
+   </style>
+   
+    <title>Document</title>
+</head>
+<body>
+    <div class="app-container">
+    <h1 class="app-heading"> string comparator !!</h1>
+    
+<div class="text-container">
+    <input type="text" class="input-text"  id="input1" onkeyup="comparetext()"/>
+    <input type="text" class="input-text"  id="input2" onkeyup="comparetext()"/>
+
+
+</div>
+<p class="match-result" id="match-result-text">  </p>
+
+</div>
+<script>
+    function comparetext(){
+        const inputaElement = document.getElementById("input1")
+        const inputbElement = document.getElementById("input2")
+        const resultElement = document.getElementById("match-result-text")
+   
+  if(inputaElement.value == inputbElement.value)
+{
+    resultElement.innerText = "result matched !"
+    resultElement.style.color = "green"  
+
+}
+
+  else
+
+{
+    resultElement.innerText ="result not matched !!"
+    resultElement.style.color = "red"
+}
+  }
+</script>
+
+</body>
+</html>
